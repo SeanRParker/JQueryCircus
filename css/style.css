@@ -1,0 +1,102 @@
+/* General Layout */
+*{
+	margin:0;
+}
+
+div.wrapper{
+	max-width:1340px;
+	background:rgba(220,220,220,.5);
+	margin:0 auto;
+	padding: 10px 5%;
+	min-height:800px;
+}
+.col-1.jquery{
+	width:50%;
+	float:left;
+}
+.col-2.jquery-ui{
+	float:right;
+	width:50%;
+}
+
+.box-wrapper{
+	min-height:50px;
+}
+.box-wrapper.tall{
+	min-height:155px;
+}
+
+/* Content */
+.content-area h2 {
+	font-size: 19px;
+	font-weight: 600;
+}
+.content-area p {
+	margin: 5px 0 7px;
+}
+.content-area{
+	font-family:"Open Sans", sans-serif;
+	font-weight:300;
+}
+
+/* General Box Styling */
+
+.box{
+	background:#4f4f4f;
+	margin:1px;
+	height:40px;
+	width:40px;
+	display:inline-block;
+	text-align:center;
+}
+
+/* Large box */
+.large-box{
+	width:200px;
+	height:150px;
+	background:#D8C877;
+	text-align:right;
+}
+
+/* Close box */
+.close-box{
+	color:rgb(255,255,255);
+	height:25px;
+	width:25px;
+	margin:5px;
+	position:relative;
+	right:0;
+}
+
+.close-box{
+	-moz-user-select: none;
+	-webkit-user-select:none;
+	-o-user-select:none;
+	cursor:pointer;
+}
+
+/* Mouseover boxes */
+
+.fade-box{
+	background: #599EBB;
+}
+
+/* Color Swap Classes */
+.red{background:rgb(171, 74, 74) !important;}
+.blue{background:rgb(43, 91, 181);}
+.green{background:green;}
+.yellow{background:yellow}
+
+/* Colors */
+.fade-hide-box{
+	background: rgb(208, 87, 76);
+}
+
+.box-group-boundary{
+	width:220px;
+}
+
+/* Accordion */
+div#accordion {
+
+}

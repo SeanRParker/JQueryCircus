@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title></title>
+<!-- Stylesheet-->
+<link type='text/css' href="css/style.css" rel='stylesheet' media='screen' >
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+<!-- Google Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,300' rel='stylesheet' type='text/css'>
+
+<!-- Loads jQuery Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+
+	// 	Removes item using an event (like click)
+		$('.hide-box').click(function() {
+			$(this).hide('fast');
+		});
+
+	// Resets first function
+		//$('.box').mouseleave(function() {
+        	//$('.box1').show('fast');
+    	//});
+
+	// Fades out item with mouseover
+	$('.fade-box').mouseover(function() {
+        $(this).fadeOut('slow');
+    });
+
+	$('.fade-hide-box').mouseover(function(){
+		$(this).fadeOut('slow');
+	});
+
+	$('.change-box').click(function() {
+        $(this).addClass('red');
+    });
+	$('.change-box').mouseover(function() {
+        $(this).addClass('blue');
+    });
+
+	// Box for closing dialogs
+	$('.close-box').click(function() {
+        $('.large-box').fadeOut('slow');
+    });
+
+	//Resets the fadeout mouseover
+    $('.fade-box').mouseleave(function() {
+        $(this).fadeIn('fast');
+    });
+
+	// Changes box color on hover
+	$('.change-box-array-box').click(function() {
+        $(this).toggleClass(newclass);
+
+	var index;
+	var newclass;
+	var classArray = ["red", "blue", "green", "yellow"];
+		for (index = 0; index < classArray.length; index++){
+
+			index++;
+			newclass = classArray[index];
+
+		};
+    });
+
+
+	// Reset on 'R'
+	$(document).keydown(function(key) {
+        switch(parseInt(key.which,10)) {
+			// 'R' key pressed
+			case 82:
+				$('.hide-box').show('fast');
+				$('.fade-hide-box').fadeIn('slow');
+				$('.large-box').fadeIn('slow');
+				$('.change-box').removeClass('blue');
+				$('.change-box').removeClass('red');
+				break;
+		}
+	});
+
+
+	});
+
+	$(document).ready(function() {
+    //Accordion with jQuery UI
+		$("#accordion").accordion({collapsible: true, active: false});
+
+	});
+
+</script>
+</head>
+
+<body>
+<div class="wrapper main-wrapper">
+
+
+    <div class="content-area">
+		<h1>Welcome to jQuery Circus!</h1>
+        <p>Press "R" to reset all changes</p>
+
+<!--   Column 1 - jQuery  -->
+        <div class="col-1 jquery">
+        <h2>jQuery Functions</h2>
+
+        <!-- How to do "x" closing boxes -->
+        <p>Remove an item with an event like click</p>
+            <div class="box-wrapper">
+            <div class="box box1 hide-box"></div>
+            <div class="box box2 hide-box"></div>
+            <div class="box box3 hide-box"></div>
+            <div class="box box4 hide-box"></div>
+            <div class="box box5 hide-box"></div>
+            </div>
+
+        <p>Mouseovers to hide boxes</p>
+
+            <div class="box-wrapper">
+                <div class="fade-hide-box box box1"></div>
+                <div class="fade-hide-box box box2"></div>
+                <div class="fade-hide-box box box3"></div>
+                <div class="fade-hide-box box box4"></div>
+                <div class="fade-hide-box box box5"></div>
+                <div class="fade-hide-box box box6"></div>
+                <div class="fade-hide-box box box7"></div>
+                <div class="fade-hide-box box box8"></div>
+            </div>
+
+
+        <!-- Mouseover to hide and reappear -->
+        <p>Mouseover to hide and reappear</p>
+        <div class="box-group-boundary">
+            <div class="fade-box box box1"></div>
+            <div class="fade-box box box2"></div>
+            <div class="fade-box box box3"></div>
+            <div class="fade-box box box4"></div>
+            <div class="fade-box box box5"></div>
+            <div class="fade-box box box6"></div>
+            <div class="fade-box box box7"></div>
+            <div class="fade-box box box8"></div>
+        </div>
+
+        <!-- Closing box -->
+        <p>Box for closing dialogues</p>
+        	<div class="box-wrapper tall">
+            <div class="large-box box">
+            <div class="close-box box">x</div>
+            </div>
+            </div>
+
+        <!-- Add CSS classes on hover and click -->
+        <p>Change colors (goes blue on hover, and red on click, ).</p>
+          <div class="box-wrapper">
+            <div class="change-box box box1"></div>
+            <div class="change-box box box2"></div>
+            <div class="change-box box box3"></div>
+            <div class="change-box box box4"></div>
+            <div class="change-box box box5"></div>
+          </div>
+
+                  <!-- Add CSS classes on hover and click -->
+        <p>Change colors (rotates colors based on times hovered).</p>
+          <div class="box-wrapper">
+            <div class="change-box-array box box1"></div>
+            <div class="change-box-array box box2"></div>
+            <div class="change-box-array box box3"></div>
+            <div class="change-box-array box box4"></div>
+            <div class="change-box-array box box5"></div>
+          </div>
+
+        </div>
+
+
+
+<!--   Column 2 - jQuery-UI   -->
+        <div class="col-2 jquery-ui">
+        <p>* function is deprecated because of CSS3</p>
+        <h2>jQuery-UI Functions</h2>
+        <!-- Accordion -->
+        <p>Create an Accordion *</p>
+         <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+                <p>I'm the first section!</p>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+                <p>I'm the second section!</p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+                <p>I'm the third section!</p>
+            </div>
+         </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
